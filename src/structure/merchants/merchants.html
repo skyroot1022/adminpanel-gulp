@@ -1,0 +1,370 @@
+ <!--START: merchants accounts -->
+<nav class="cat__core__top-sidebar cat__core__top-sidebar--subbg">
+    <div class="pull-right cat__top-bar__right">
+        <!-- Icons Menu Item -->
+        <div class="dropdown cat__top-bar__avatar-dropdown">                        
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="" role="menu">
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-file-text-o" aria-hidden="true"></i> CVS</a>
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Excel</a>
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a>
+            </ul>
+            <i class="icmn-download dropdown-toggle cat__top-bar__icon" data-toggle="dropdown" aria-expanded="false"></i>            
+        </div>
+
+        <div class="cat__top-bar__item">
+            <a href="javascript: void(0);" >
+                <i class="fa fa-print cat__top-bar__icon"></i>
+            </a>       
+        </div>  
+        <!-- End Icons Menu Item -->              
+    </div>
+    <span class="d-block mb-2">
+        <span class="text-white">Merchants > Search</span>
+    </span>
+</nav>
+
+<nav class="cat__core__top-level-menu cat__config--superclean">
+    <section class="card">
+        <div class="nav-tabs-horizontal">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#search" role="tab">Search</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#add" role="tab">Add</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#reports" role="tab">Reports</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content cat__core__block-bg">
+            <!-- Reports start-->
+            <div class="tab-pane" id="reports" role="tabcard">
+                <div class="nav-tabs-horizontal">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#reportIncome" role="tab">Income</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#reportPlayers" role="tab">Players</a>
+                        </li>                    
+                    </ul>            
+                </div>
+            </div>
+            <!-- Reports start-->
+
+            <!-- Add start-->
+            <div class="tab-pane" id="add" role="tabcard">
+                <form id="form-validation" name="form-validation" method="POST">
+                    <div class="card-block p-5">                    
+                        <div class="row">
+                            <div class="form-group col-md-2">
+                                <label class="text-gsphover">Licensee ID</label>
+                                <input class="form-control"
+                                    name="validation[Licensee ID]"
+                                    placeholder="Licensee ID"
+                                    disabled="" id="l30"
+                                    type="text" data-validation="[L>=6, L<=18, MIXED]"
+                                    data-validation-message="$ must be between 6 and 18 characters. No special characters allowed."
+                                    data-validation-regex="/^((?!admin).)*$/i"
+                                    data-validation-regex-message="The word &quot;Admin&quot; is not allowed in the $">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="text-gsphover">Descriiption</label>
+                                <input type="text" class="form-control" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="text-gsphover">Merchant ID</label>
+                                    <input class="form-control"
+                                        name="validation[Merchant ID]"
+                                        placeholder="Merchant ID"
+                                        type="text" data-validation="[L>=6, L<=18, MIXED]"
+                                        data-validation-message="$ must be between 6 and 18 characters. No special characters allowed."
+                                        data-validation-regex="/^((?!admin).)*$/i"
+                                        data-validation-regex-message="The word &quot;Admin&quot; is not allowed in the $">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="text-gsphover">Brand Name</label>
+                                    <input class="form-control"
+                                            name="validation[Name]"
+                                            placeholder="Name"
+                                            type="text" data-validation="[L>=6, L<=18, MIXED]"
+                                            data-validation-message="$ must be between 6 and 18 characters. No special characters allowed."
+                                            data-validation-regex="/^((?!admin).)*$/i"
+                                            data-validation-regex-message="The word &quot;Admin&quot; is not allowed in the $">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="text-gsphover">Status</label>
+                                    <select class="selectpicker form-control">
+                                        <option>Sample1</option>
+                                        <option>Sample2</option>
+                                        <option>Sample3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="text-gsphover">Currency</label>
+                                    <select class="selectpicker form-control" data-live-search="true">
+                                        <option>Sample1</option>
+                                        <option>Sample2</option>
+                                        <option>Sample3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="text-gsphover">Language</label>
+                                    <select class="selectpicker form-control" data-live-search="true">
+                                        <option>Sample1</option>
+                                        <option>Sample2</option>
+                                        <option>Sample3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="text-gsphover">Callback Api</label>
+                                    <input class="form-control" type="url" placeholder="URL" id="l45">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="row pt-3">
+                                    <div class="col-md-6">
+                                        <label class="text-gsphover">Business Contact</label>
+                                        <div class="col-lg-12 px-0">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">Name</label>
+                                                <input id="l33"
+                                                    class="form-control"
+                                                    name="validation[Name]"
+                                                    placeholder="Name"
+                                                    type="text" data-validation="[L>=6, L<=18, MIXED]"
+                                                    data-validation-message="$ must be between 6 and 18 characters. No special characters allowed."
+                                                    data-validation-regex="/^((?!admin).)*$/i"
+                                                    data-validation-regex-message="The word &quot;Admin&quot; is not allowed in the $">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 px-0">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">Phone</label>
+                                                <input type="text" class="form-control" placeholder="Phone Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 px-0">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">Email</label>
+                                                <input class="form-control"
+                                                    name="validation[email]"
+                                                    type="text"
+                                                    placeholder="Email"
+                                                    data-validation="[EMAIL]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="text-gsphover">Technical Contact</label>
+                                        <div class="col-lg-12 px-0">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">Name</label>
+                                                <input class="form-control"
+                                                    name="validation[Name]"
+                                                    placeholder="Name"
+                                                    type="text" data-validation="[L>=6, L<=18, MIXED]"
+                                                    data-validation-message="$ must be between 6 and 18 characters. No special characters allowed."
+                                                    data-validation-regex="/^((?!admin).)*$/i"
+                                                    data-validation-regex-message="The word &quot;Admin&quot; is not allowed in the $">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 px-0">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">Phone</label>
+                                                <input type="text" class="form-control" placeholder="Phone Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 px-0">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">Email</label>
+                                                <input class="form-control"
+                                                    name="validation[email]"
+                                                    type="text"
+                                                    placeholder="Email"
+                                                    data-validation="[EMAIL]">
+                                            </div>
+                                        </div>
+                                    </div>                                            
+                                </div>                                        
+                            </div>
+                            <div class="col-md-4 pt-3">
+                                <label class="text-gsphover">Address</label>
+                                <div class="col-lg-12 px-0">
+                                    <div class="form-group">
+                                        <label class="text-gsphover">Street</label>
+                                        <input type="text" class="form-control" placeholder="Street">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 px-0">
+                                    <div class="form-group">
+                                        <label class="text-gsphover">Address Line2</label>
+                                        <input type="text" class="form-control" placeholder="Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 px-0">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">City</label>
+                                                <input type="text" class="form-control" placeholder="City">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="text-gsphover">State Prov</label>
+                                                <input type="text" class="form-control" placeholder="Stater">
+                                            </div>
+                                        </div>                                    
+                                    </div>                                    
+                                </div>
+                                <div class="col-lg-6 col-lg-offset-6 px-0">
+                                    <div class="form-group">
+                                        <label class="text-gsphover">Country</label>
+                                        <input type="text" class="form-control" placeholder="Country">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-4 offset-md-8">
+                                <button type="submit" class="btn btn-primary width-150">Save</button>
+                                <button type="button" class="btn btn-default remove-error">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Add start-->
+
+            <!-- Search start-->
+            <div class="tab-pane" id="search" role="tabcard">
+                <div class="card-block">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-3">
+                                <label class="text-gsphover col-form-label">Licensee ID</label>                            
+                                <input class="form-control" placeholder="Licensee ID">
+                            </div>
+                            <div class="col-md-2 col-sm-3">
+                                <label class="text-gsphover col-form-label">Merchant ID</label>                            
+                                <input class="form-control" placeholder="Merchant ID">
+                            </div>
+                            <div class="col-md-2 col-sm-3">
+                                <label class="text-gsphover col-form-label">Brand Name</label>                            
+                                <input class="form-control" placeholder="Brand Name">
+                            </div>                            
+                            <div class="col-md-2 col-sm-3">
+                                <button class="btn btn-icon btn-link cat__core__icobutton fa fa-search mt-1 pt-5" type="button" id="search"></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-block cat__core__block-bg">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-5">
+                                <table class="table table-hover nowrap" id="example1" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Licensee ID</th>
+                                        <th>Merchant ID</th>
+                                        <th>Brand Name</th>
+                                        <th>Status</th>
+                                        <th>URL</th>
+                                        <th>Joined</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Licensee-ID</td>
+                                        <td>Merchant-ID</td>
+                                        <td>Brand-Name</td>
+                                        <td>Status</td>
+                                        <td>http://brand-url.eu</td>
+                                        <td>Mmm dd,yyyy</td>
+                                        <td><button class="btn btn-icon btn-link cat__core__tableico py-0 fa fa-pencil-square-o" type="button"></button></td>
+                                        </tr>
+                                    <tr>
+                                        <td>Licensee-ID</td>
+                                        <td>Merchant-ID</td>
+                                        <td>Brand-Name</td>
+                                        <td>Status</td>
+                                        <td>http://brand-url.eu</td>
+                                        <td>Mmm dd,yyyy</td>
+                                        <td><button class="btn btn-icon btn-link cat__core__tableico py-0 fa fa-pencil-square-o" type="button"></button></td>
+                                        </tr>    
+                                    <tr>
+                                        <td>Licensee-ID</td>
+                                        <td>Merchant-ID</td>
+                                        <td>Brand-Name</td>
+                                        <td>Status</td>
+                                        <td>http://brand-url.eu</td>
+                                        <td>Mmm dd,yyyy</td>
+                                        <td><button class="btn btn-icon btn-link cat__core__tableico py-0 fa fa-pencil-square-o" type="button"></button></td>
+                                        </tr> 
+                                    <tr>
+                                        <td>Licensee-ID</td>
+                                        <td>Merchant-ID</td>
+                                        <td>Brand-Name</td>
+                                        <td>Status</td>
+                                        <td>http://brand-url.eu</td>
+                                        <td>Mmm dd,yyyy</td>
+                                        <td><button class="btn btn-icon btn-link cat__core__tableico py-0 fa fa-pencil-square-o" type="button"></button></td>
+                                        </tr>                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search start-->
+        </div>
+    </section>
+</nav>
+<!-- START: page scripts -->
+<script>
+    $(function(){
+
+        $('#example1').DataTable({
+            responsive: true,
+            searching: false
+        });
+
+        $('#form-validation').validate({
+            submit: {
+                settings: {
+                    inputContainer: '.form-group',
+                    errorListClass: 'form-control-error',
+                    errorClass: 'has-danger'
+                }
+            }
+        });
+
+        $('#form-validation .remove-error').on('click', function(){
+            $('#form-validation').removeError();
+        });
+    });
+</script>
+
+<!-- END: page scripts -->

@@ -1,0 +1,25 @@
+// Import mixins from "core" module
+@import '../../core/common/css/mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  EDITABLE TABLE */
+
+.editable-table {
+    td {
+        outline: none !important;
+        background-color: $gspsubblockcolor;
+        border-color: $text !important;
+    }
+    & + input, & input:focus {
+        border: 1px solid $text !important;
+        outline: 0 !important;
+        outline-offset: 0 !important;
+        box-sizing: content-box;
+    }
+    &.table-inverse {
+        & + input, & input:focus {
+            border-color: $text !important;
+            border-bottom: none !important;
+        }
+    }
+}

@@ -1,0 +1,663 @@
+ <!--START: tournaments accounts -->
+<nav class="cat__core__top-sidebar cat__core__top-sidebar--subbg">
+    <div class="pull-right cat__top-bar__right">
+        <!-- Icons Menu Item -->
+        <div class="dropdown cat__top-bar__avatar-dropdown">                        
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="" role="menu">
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-file-text-o" aria-hidden="true"></i> CVS</a>
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Excel</a>
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a>
+            </ul>
+            <i class="icmn-download dropdown-toggle cat__top-bar__icon" data-toggle="dropdown" aria-expanded="false"></i>            
+        </div>
+
+        <div class="cat__top-bar__item">
+            <a href="javascript: void(0);" >
+                <i class="fa fa-print cat__top-bar__icon"></i>
+            </a>       
+        </div>  
+        <!-- End Icons Menu Item -->              
+    </div>
+    <span class="d-block mb-2">
+        <span class="text-white">Tournaments > Search</span>
+    </span>
+</nav>
+
+<nav class="cat__core__top-level-menu cat__config--superclean">
+    <section class="card">
+        <div class="nav-tabs-horizontal">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#search" role="tab">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#create" role="tab">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#network" role="tab">Network</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#reports" role="tab">Reports</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content cat__core__block-bg">
+            <div class="tab-pane" id="search" role="tabcard">
+                <div class="card-block">
+                    <form>
+                        <div class="row">                            
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l0">Start/End</label>
+                                <select class="selectpicker form-control">
+                                    <option>Option Start</option>
+                                    <option>Option End</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l1">From</label>
+                                <input id="datepicker-search-start" class="form-control datepicker-init" placeholder="Select Date" type="text">
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l1">To</label>
+                                <input id="datepicker-search-end" class="form-control datepicker-init" placeholder="Select Date" type="text">
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l2">Status</label>                            
+                                <select class="selectpicker form-control" multiple>
+                                    <option>Option1</option>
+                                    <option>Option2</option>
+                                    <option>Option3</option>
+                                    <option>Option4</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l1">Type</label>
+                                <select class="selectpicker form-control">
+                                    <option>Network</option>
+                                    <option>Stand Alone</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l1">NetworkID</label>
+                                <select class="selectpicker form-control" data-live-search="true">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l1">Licensee Name</label>
+                                <select class="selectpicker form-control" data-live-search="true">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="text-gsphover col-form-label" for="l1">Brand Name</label>
+                                <select class="selectpicker form-control" multiple>
+                                    <option>Silver Gaming</option>
+                                    <option>Fairgo Ent</option>
+                                    <option>Classic Games</option>
+                                    <option>Arcade</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-icon btn-link cat__core__icobutton fa fa-search mt-4" type="button"></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-5">
+                                <table class="table table-hover nowrap" id="searchdata" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th>ID<br>Status</th>
+                                        <th>Game Name<br>Tournaments Name</th>
+                                        <th>Start Date<br>Finish Date</th>
+                                        <th>Buy-In Fee($)<br>Re-Buy Fee($)</th>
+                                        <th>Buy-In (#)<br>Buy-In ($)</th>
+                                        <th>Re-Buy (#)<br>Re-Buy ($)</th>
+                                        <th>Manual (#)<br>Manual ($)</th>
+                                        <th>Refunds ($)<br>Refunds ($)</th>
+                                        <th>Prizes (#)<br>Prizes ($)</th>
+                                        <th>Profit ($)<br>Rank (#)</th>
+                                        <th>Time<br>Remaining</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>                                    
+                                    <tbody>
+                                    <tr>
+                                        <td>1<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>999</td>
+                                        <td><i class="fa fa-pencil-square-o"></i><br><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999</td>
+                                        <td><i class="fa fa-pencil-square-o"></i><br><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999</td>
+                                        <td><i class="fa fa-pencil-square-o"></i><br><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999</td>
+                                        <td><i class="fa fa-pencil-square-o"></i><br><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999<br>999</td>
+                                        <td>9999</td>
+                                        <td><i class="fa fa-pencil-square-o"></i><br><i class="fa fa-close"></i></td>
+                                    </tr>                 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="create" role="tabcard">
+                <!-- START: forms/form-wizard -->
+                <section class="card cat__core__block-bg">                    
+                    <div class="card-block">                                
+                        <div class="mb-5">
+                            <div id="number-next" class="cat__wizard cat__wizard__numbers">
+                                <!-- Step1 -->
+                                <h3>
+                                    <span class="cat__wizard__steps__title">Profile</span>
+                                </h3>
+                                <section class="text-center">
+                                    <div class="row">
+                                        <div class="card-block bg-subblock">
+                                            <div class="row text-left">
+                                                <div class="col-md-2 form-group">
+                                                    <label class="form-label text-gsphover">Name</label>
+                                                    <input type="text" class="form-control" placeholder="Name" value="Summer Slot Series">                                                    
+                                                </div>
+                                                <div class="col-md-2 form-group">
+                                                    <label class="form-label text-gsphover">Network</label>
+                                                    <select class="selectpicker form-control" multiple>
+                                                        <option>Net-001</option>
+                                                        <option>Net-002</option>
+                                                        <option>Net-003</option>
+                                                        <option>Net-004</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <label class="form-label text-gsphover">Brand Name</label>
+                                                    <select class="selectpicker form-control" multiple>
+                                                        <option>Silver Gaming</option>
+                                                        <option>Fairgo Ent</option>
+                                                        <option>Classic Games</option>
+                                                        <option>Arcade</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row text-left">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label class="form-label text-gsphover">Game Type</label>
+                                                        <select class="selectpicker form-control">
+                                                            <option>Game Type 1</option>
+                                                            <option>Game Type 2</option>
+                                                            <option>Game Type 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">                                                    
+                                                    <div class="form-group">
+                                                        <label class="form-label text-gsphover">Game Title</label>
+                                                        <select class="selectpicker form-control" data-live-search="true">
+                                                            <option>A Game</option>
+                                                            <option>D Game</option>
+                                                            <option>E Game</option>
+                                                            <option>S Game</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label text-gsphover">Chanels</label>
+                                                        <select class="selectpicker form-control" multiple>
+                                                            <option selected>Instant Play</option>
+                                                            <option selected>Mobile</option>
+                                                            <option selected>Download</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-md-offset-2">
+                                                    <div class="form-group">
+                                                        <label class="form-label text-gsphover">Featured</label>
+                                                        <select class="selectpicker form-control">
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3">
+                                        <div class="col-md-15 pl-0">
+                                            <div class="card-block bg-subblock text-left">
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Toumament</label>                                                
+                                                </div>                                               
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Start Date</label>
+                                                    <input id="datepicker-toumament-start" class="form-control datepicker-init" placeholder="Starts" type="text">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Finish Date</label>
+                                                    <input id="datepicker-toumament-end" class="form-control datepicker-init" placeholder="Finishes" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-15">
+                                            <div class="card-block bg-subblock text-left">
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Display</label>
+                                                </div>                                               
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Start Date</label>
+                                                    <input id="datepicker-display-start" class="form-control datepicker-init" placeholder="Display On" type="text">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Finish Date</label>
+                                                    <input id="datepicker-display-end" class="form-control datepicker-init" placeholder="Display Off" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-15">
+                                            <div class="card-block bg-subblock text-left">
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Entrants</label>                                                
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Minimum</label>
+                                                    <input type="number" class="form-control" placeholder="Min." id="l34">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Maximum</label>
+                                                    <input type="number" class="form-control" placeholder="Max." id="l34">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-15">
+                                            <div class="card-block bg-subblock text-left">
+                                                <div class="form-group">
+                                                    <label class="form-check-label text-gsphover">
+                                                        <input class="form-check-input" value="" type="checkbox">
+                                                        Highlights<br>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Starts</label>
+                                                    <input id="datepicker-highlight-start" class="form-control datepicker-init" placeholder="Turn On" type="text">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Ends</label>
+                                                    <input id="datepicker-highlight-end" class="form-control datepicker-init" placeholder="Turn Off" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-15 pr-0">
+                                            <div class="card-block bg-subblock text-left">
+                                                <div class="form-group">
+                                                    <label class="form-check-label text-gsphover">
+                                                        <input class="form-check-input" value="" type="checkbox">
+                                                        Recurring<br>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Interval</label>
+                                                    <select class="selectpicker form-control">
+                                                        <option>Daily</option>
+                                                        <option>Weekly</option>
+                                                        <option>Monthly</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Until</label>
+                                                    <input class="form-control datepicker-init" placeholder="Stop On" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!--End Step1 -->
+                                <!-- Step2 -->
+                                <h3>
+                                    <span class="cat__wizard__steps__title">Re-Buy</span>
+                                </h3>
+                                <section class="text-center">
+                                     <div class="row pt-3">
+                                        <div class="col-md-4">
+                                            <div class="card-block bg-subblock text-left">
+                                                <label class="text-gsphover pt-0 col-form-label " for="l0">Buy-In</label>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Fee</label>
+                                                    <input type="text" class="form-control money-mask-input" placeholder="In Fee">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label text-gsphover">Initial Balance</label>
+                                                    <input type="text" class="form-control money-mask-input" placeholder="Initial Balance">
+                                                </div>
+                                                <div class="form-group">                                                    
+                                                    <label class="form-label text-gsphover">Required Plays</label>
+                                                    <input type="text" class="form-control plays-mask-input" placeholder="Plays">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-block bg-subblock text-left">
+                                                <div class="pb-1">
+                                                    <label class="form-check-label text-gsphover pb-2 pl-0">                                                        
+                                                        Re-Buy<input class="form-check-input ml-2" value="" type="checkbox" id="rebuycheckbox" checked="true">
+                                                    </label>
+                                                </div>
+                                                <div class="row text-left" id="rebuycontent">
+                                                    <div class="col-md-4 ">
+                                                        <div class="form-group">
+                                                            <label class="form-label text-gsphover">Starts</label>
+                                                            <input id="datepicker-rebuy-start" class="form-control datepicker-init rebuyelement" placeholder="Interval" type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-label text-gsphover">Finishes</label>
+                                                            <input id="datepicker-rebuy-end" class="form-control datepicker-init ebuyelement" placeholder="Stop On" type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-label text-gsphover">Balance Threshold</label>
+                                                            <input type="text" class="form-control balance-mask-input rebuyelement" placeholder="Balance Below">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                        <div class="form-group">
+                                                            <label class="form-label text-gsphover">Required Plays</label>
+                                                            <input type="text" class="form-control plays-mask-input rebuyelement" placeholder="Plays">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-label text-gsphover">Fee</label>
+                                                            <input type="text" class="form-control money-mask-input rebuyelement" placeholder="Fee Amount">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-label text-gsphover">Add On</label>
+                                                            <input type="text" class="form-control money-mask-input rebuyelement" placeholder="Add On Amount">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                        <div class="form-group">
+                                                            <label class="form-check-label text-gsphover">
+                                                                <input class="form-check-input rebuyelement" type="checkbox" id="rebuylimit" checked="true">
+                                                                Limit Re-Buys<br>
+                                                            </label>
+                                                            <input type="number" class="form-control" min="0" placeholder="Count" id="rebuycount">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                </section>
+                                <!--End Step2 -->
+                                <!-- Step3 -->
+                                <h3>
+                                    <span class="cat__wizard__steps__title">Prizes</span>
+                                </h3>
+                                <section class="text-center">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="row px-3 mb-3">
+                                                <div class="card-block bg-subblock text-left">
+                                                    <div class="form-group">
+                                                        <label class="form-label text-gsphover">Prize Type</label>
+                                                        <select class="selectpicker form-control" id="prizetypeselectbox">
+                                                            <option disabled selected value> -- select an option -- </option>
+                                                            <option>Fixed</option>
+                                                            <option>Proportional</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row px-3 prizetypecontent">
+                                                <div class="card-block bg-subblock text-left">
+                                                    <div class="form-group">
+                                                        <label class="form-label text-gsphover">Percentage Of Fees(%)</label>
+                                                        <input type="text" class="form-control text-right money-mask-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 px-0">
+                                            <div id="prizefixed"></div>
+                                            <div id="prizeproportional"></div>
+                                        </div>                                        
+                                    </div>
+                                </section>
+                                <!-- Step3 -->
+                            </div>
+                        </div>                        
+                    </div>
+                </section>
+                <!-- END: forms/form-wizard -->
+            </div>
+
+            <div class="tab-pane" id="network" role="tabcard">
+                <div class="nav-tabs-horizontal">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#networklisting" role="tab">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" data-toggle="tab" data-target="#networkadd" role="tab">Add</a>
+                        </li>                    
+                    </ul>            
+                </div>
+            </div>
+            <div class="tab-pane" id="reports" role="tabcard">
+            </div>
+        </div>
+    </section>
+</nav>
+
+<!-- START: page scripts -->
+<script>
+    $(function(){ 
+        
+        //data table
+        $('#searchdata').DataTable({
+            responsive: true,
+            searching: false
+        });
+
+        //validation
+        $('#form-validation').validate({
+            submit: {
+                settings: {
+                    inputContainer: '.form-group',
+                    errorListClass: 'form-control-error',
+                    errorClass: 'has-danger'
+                }
+            }
+        });
+
+        $('#form-validation .remove-error').on('click', function(){
+            $('#form-validation').removeError();
+        });
+
+        //Re-buy check box checked/unchecked
+        $('#rebuycheckbox').change(function(){
+            var els = $('#rebuycontent').find('.rebuyelement');   
+            $.each(els,function(i,el){
+                $(el).attr('disabled',!($('#rebuycheckbox').is(":checked")));
+            });
+            
+            $('#rebuycount').attr('disabled',!(($('#rebuycheckbox').is(":checked")) && ($('#rebuylimit').is(":checked"))));
+        })
+
+        $('#rebuylimit').change(function(){
+            $('#rebuycount').attr('disabled',!($('#rebuylimit').is(":checked")));            
+        })
+
+        //jquery-steps
+        $("#number-next").steps({
+            headerTag: "h3",
+            bodyTag: "section",
+            transitionEffect: "slideLeft",
+            autoFocus: true,
+            labels: 
+            {
+               next: "Next",
+               finish: "Save",
+            }
+        });
+
+        // datepicker
+        $('.datepicker-init').datetimepicker({            
+            widgetPositioning: {
+                horizontal: 'left'
+            },
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down",
+                previous: 'fa fa-arrow-left',
+                next: 'fa fa-arrow-right'
+            },
+            format: 'LL'
+        });
+
+        var datepickerarray = [
+            {start:"#datepicker-search-start", end:"#datepicker-search-end"},
+            {start:"#datepicker-toumament-start", end:"#datepicker-toumament-end"},
+            {start:"#datepicker-display-start", end:"#datepicker-display-end"},
+            {start:"#datepicker-highlight-start", end:"#datepicker-highlight-end"},
+            {start:"#datepicker-rebuy-start", end:"#datepicker-rebuy-end"}];
+        
+        for(var i=0; i<datepickerarray.length; i++) {
+            $(datepickerarray[i].start).datetimepicker().on('dp.change', datepickerarray[i], function (e) {
+                var incrementDay = moment(new Date(e.date));
+                incrementDay.add(1, 'days');
+                $(e.data.end).data('DateTimePicker').minDate(incrementDay);
+                $(this).data("DateTimePicker").hide(); 
+            });
+            $(datepickerarray[i].end).datetimepicker().on('dp.change', datepickerarray[i], function (e) {
+                var decrementDay = moment(new Date(e.date));
+                decrementDay.subtract(1, 'days');
+                $(e.data.start).data('DateTimePicker').maxDate(decrementDay);
+                $(this).data("DateTimePicker").hide();
+            });
+        }
+                    
+        //select picker
+        $('*:not(.bootstrap-select) > .selectpicker').selectpicker();
+
+        //edittable Prize Type
+        $("#prizefixed").prizeeditTable({
+            data: [
+                ['0', '0', '0', '0'],
+            ],
+            headerCols: [
+                'From',
+                'To',
+                'Balance AddOn',
+                'Bonus AddOn'
+            ],
+            tabletype: 'fixed'
+            //maxRows: 3
+        });
+
+        $("#prizeproportional").prizeeditTable({
+            data: [
+                ['0', '0', '0', '0'],
+            ],
+            headerCols: [
+                'From',
+                'To',
+                'Perecentage AddOn',
+                'Bonus AddOn'
+            ],
+            tabletype: 'proportional'
+        });
+
+        $('.prizetypecontent').hide();
+        $('#prizeproportional').hide();
+        $('#prizefixed').hide();
+        $('#prizetypeselectbox').on('change', function() {
+            if(this.value=="Proportional") {
+                $('.prizetypecontent').show();
+                $('#prizefixed').hide();
+                $('#prizeproportional').show();
+            }
+            else {
+                $('.prizetypecontent').hide();
+                $('#prizefixed').show();
+                $('#prizeproportional').hide();
+            }
+        });
+
+        $('table.inputtable td input').keyup(function () { 
+    this.value = this.value.replace(/[^0-9\.]/g,'');
+});
+        //input mask        
+        $('.plays-mask-input').mask('0,00', {reverse: true});        
+        $('.balance-mask-input').mask('0,000.00', {reverse: true});
+        $('.money-mask-input').mask('000,000,000.00', {reverse: true});
+    });
+       
+</script>
+<!-- END: page scripts -->

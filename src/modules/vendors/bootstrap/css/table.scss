@@ -1,0 +1,96 @@
+// Import mixins from "core" module
+@import '../../../core/common/css/mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/* TABLE */
+
+.table {
+    thead {
+        padding-bottom: 10px;
+        th {
+            border-color: $gspbodycolor;                       
+            border-bottom-width: 8px;
+            outline: none !important;
+            background-color: #6c6c6c !important;
+            color: $text-lighten;
+            &:focus {
+                background: #575556;
+            }
+        }
+    }
+    td, th {
+        text-align: left;
+        &:focus, &:hover {
+        }
+    }
+    tbody {
+        background-color: #919191;
+        tr:first-child {
+            td {
+                border-top: none;
+            }
+        }
+        tr {
+            td {
+                color: $text-lighten;
+                border: none;
+            }
+        }
+    }
+    &.table-hover {
+        tbody {
+            tr {
+                &:hover {
+                    background: #6c6c6c;
+
+                }
+            }
+        }
+    }
+    tr.active, th.active {
+        background: $gray-lighten-more;
+    }
+    .thead-inverse {
+        th {
+            background: $gspsubblockcolor;
+        }
+    }
+    .thead-default {
+        th {
+            background: $gray-lighten-more;
+        }
+    }
+
+    &.table-striped {
+        tbody tr:nth-of-type(odd) {
+            background: $gray-lighten-more;
+        }
+    }
+
+    &.table-vertical-middle {
+        td, th {
+            vertical-align: middle;
+        }
+    }
+}
+
+.table-inverse {
+    color: $gray-darken;
+
+    
+    thead th {
+        color: $white;
+    }
+    th, td {
+        border-top-color: $black-lighten-more;
+    }
+    th, td, thead th {
+        background: $gspsubblockcolor;
+        &:focus {
+            background: $gspsubblockcolor;
+        }
+    }
+    tr.active, th.active {
+        background: $gray-lighten;
+    }
+}

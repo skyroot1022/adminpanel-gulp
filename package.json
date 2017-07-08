@@ -1,0 +1,28 @@
+{
+  "name": "project",
+  "version": "2.1.0",
+  "author": "Mediatec Software http://www.mediatec.org <hello@mediatec.com>",
+  "description": "Clean UI Admin Template Premium",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "latest",
+    "mjml": "latest",
+    "rimraf": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-ignore": "latest",
+    "gulp-sass": "latest",
+    "gulp-rename": "latest",
+    "gulp-rigger": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "gulp-template": "latest",
+    "gulp-wrap": "latest",
+    "gulp-data": "latest",
+    "gulp-print": "latest",
+    "gulp-replace-task": "latest",
+    "gulp-rimraf": "latest",
+    "gulp-promise": "latest"
+  }
+}
